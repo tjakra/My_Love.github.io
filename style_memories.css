@@ -1,0 +1,244 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:#000;
+    width:100vw;
+    height:100vh;
+}
+
+.back{
+    color:white;
+}
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#000;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    transition:opacity .8s;
+}
+
+#loading.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.love-loader{
+    font-size:4rem;
+
+    animation:
+    pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+#progress{
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+#container{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+.photo{
+    position:absolute;
+    object-fit:cover;
+    border-radius:15px;
+    opacity:0;
+
+    animation: showPhoto 6s linear forwards;
+    border:
+    3px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.4);
+
+    backdrop-filter:blur(10px);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        transparent 0%,
+        rgba(0,0,0,.4) 100%
+    );
+
+    z-index:1;
+}
+
+.pesan{
+    width: 100%;
+    height: 100%;
+    z-index:2;
+}
+
+.signature{
+    margin-top:20px;
+
+    font-style:italic;
+
+    color:
+    rgba(255,255,255,.75);
+}
+
+.card{
+    width:90%;
+    max-width:420px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:28px;
+
+    color:white;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 40px rgba(255,77,136,.15),
+        0 15px 50px rgba(0,0,0,.35);
+
+    animation:
+        floatCard 5s ease-in-out infinite;
+}
+
+.card-header{
+    background:none;
+    border:none;
+
+    padding-top:25px;
+    padding-bottom:10px;
+}
+
+.card-header h2{
+    font-size:1.8rem;
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff7eb3,
+        #ffd1dc
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.card-body{
+    text-align:center;
+    padding:25px;
+}
+
+.card-body p{
+    line-height:1.8;
+    font-size:1rem;
+
+    color:
+    rgba(255,255,255,.9);
+}
+
+.btn{
+    position:static !important;
+    transform:none !important;
+
+    width:100%;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d88,
+        #ff8ab3
+    );
+
+    border:none;
+    border-radius:15px;
+
+    padding:12px;
+
+    font-weight:600;
+
+    box-shadow:
+        0 0 20px rgba(255,77,136,.5);
+    transition:.3s;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.btn:hover{
+    transform:
+    translateY(-2px) !important;
+
+    box-shadow:
+    0 0 30px rgba(255,77,136,.8);
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:
+        translate(-50%,-50%);
+    }
+
+    50%{
+        transform:
+        translate(-50%,-53%);
+    }
+}
+
+@keyframes showPhoto{
+
+    0%{
+        opacity:0;
+        transform:
+        scale(.5)
+        rotate(var(--rot));
+    }
+
+    20%{
+        opacity:1;
+        transform:
+        scale(1)
+        rotate(var(--rot));
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        scale(1.2)
+        rotate(var(--rot));
+    }
+}
