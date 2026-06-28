@@ -83,7 +83,9 @@ preloadImages(photos)
     <h1>Happy Birthday ❤️</h1>
     <p>Everything is ready...</p>
     `;
-    loadingScreen.classList.add("hide");
+    setTimeout(() => {
+        loadingScreen.classList.add("hide");
+    }, 2000);
 
     setTimeout(() => {
         loadingScreen.remove();
@@ -91,7 +93,7 @@ preloadImages(photos)
         // START ANIMATION
         setInterval(spawnPhoto, 1800);
 
-    }, 800);
+    }, 2800);
 
 });
 
