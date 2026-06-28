@@ -8,7 +8,7 @@ const path = "her/"
 const photos = [];
 
 listfoto(photos,10,"jpeg")
-listfoto(photos,43,"jpg")
+listfoto(photos,10,"jpg")
 
 function listfoto(foto,q,type){
     let putin
