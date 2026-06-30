@@ -1,6 +1,5 @@
 
 const container = document.getElementById("container");
-
 /*
 Masukin foto-foto kalian di sini
 */
@@ -28,6 +27,7 @@ document.getElementById("progress");
 
 let loaded = 0;
 
+// loading
 function preloadImages(images){
 
     return Promise.all(
@@ -137,4 +137,26 @@ function spawnPhoto(){
     setTimeout(()=>{
         img.remove();
     },6000);
+}
+
+const card =
+document.querySelector(".card");
+
+const hideBtn =
+document.getElementById("toggleCard");
+
+const showBtn =
+document.getElementById("showCard");
+
+function hide() {
+    card.classList.add("hidden");
+
+    showBtn.style.display =
+    "block";
+}
+function show() {
+    card.classList.remove("hidden");
+
+    showBtn.style.display =
+    "none";
 }

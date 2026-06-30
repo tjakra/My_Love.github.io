@@ -11,10 +11,6 @@ body{
     height:100vh;
 }
 
-.back{
-    color:white;
-}
-
 #loading{
     position:fixed;
     inset:0;
@@ -133,6 +129,7 @@ body{
 
     animation:
         floatCard 5s ease-in-out infinite;
+    transition:.5s;
 }
 
 .card-header{
@@ -171,6 +168,17 @@ body{
     rgba(255,255,255,.9);
 }
 
+.card.hidden{
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.8);
+
+    transition:.5s;
+}
 .btn{
     position:static !important;
     transform:none !important;
@@ -205,6 +213,28 @@ body{
 
     box-shadow:
     0 0 30px rgba(255,77,136,.8);
+}
+
+.tampil-card{
+    position:fixed;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    display: none;
+    z-index:999;
+    border: none;
+    padding:12px 20px;
+    border-radius:30px;
+    color:white;
+    background:
+    linear-gradient(
+        135deg,
+        #ff4d88,
+        #ff8ab3
+    );
+
+    box-shadow:
+        0 0 25px rgba(255,77,136,.5);
 }
 
 @keyframes floatCard{
