@@ -150,9 +150,13 @@ document.getElementById("showCard");
 
 function hide() {
     card.classList.add("hidden");
-    showBtn.classList.remove("hidden");
+    showBtn.style.display =
+    "block";
+
 }
 function show() {
     card.classList.remove("hidden");
-    card.classList.add("hidden");
+    showBtn.style.display =
+    "none";
+
 }
